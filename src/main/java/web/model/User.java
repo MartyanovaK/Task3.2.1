@@ -3,7 +3,6 @@ package web.model;
 import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "users")
