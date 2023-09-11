@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>USERS</title>
@@ -13,16 +13,12 @@
             <th>lastName</th>
             <th>email</th>
         </tr>
-        <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
-            <td th:text="${user.firstName}"></td>
-            <td th:text="${user.lastName}"></td>
-            <td th:text="${user.email}"></td>
-        </tr>
+        <td th:text="${user.id}"> </td>
+        <a> th:href="@{/{id}(id = ${user.getId()})}"</a>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.email}"></td>
     </div>
 </table>
-
-
-
 </body>
 </html>

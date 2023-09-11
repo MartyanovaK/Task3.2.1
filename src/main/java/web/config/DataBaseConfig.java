@@ -12,6 +12,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +26,7 @@ import java.util.Properties;
 @ComponentScan(value = "web")
 public class DataBaseConfig {
 
-    @Resource
+    @PersistenceContext
     private final Environment environment;
 
     @Autowired
