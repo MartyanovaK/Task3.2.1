@@ -31,13 +31,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(User user) {
-        userDao.delete(user);
+    public void delete(int id) {
+        User user = userDao.getById(id);
+        userDao.delete(user.getId());
     }
 
     @Override
-    public void edit(User user) {
-        userDao.edit(user);
+    public void edit(int id, User user) {
+
+        userDao.edit(user.getId(), user);
     }
 
     @Override
