@@ -13,8 +13,7 @@
             <th>lastName</th>
             <th>email</th>
         </tr>
-        <td th:text="${user.id}"> </td>
-        <a> th:href="@{/{id}(id = ${user.getId()})}"</a>
+        <td th:text="${user.id}"></td>
         <td th:text="${user.firstName}"></td>
         <td th:text="${user.lastName}"></td>
         <td th:text="${user.email}"></td>
@@ -22,6 +21,6 @@
 </table>
 <br/>
 <hr/>
-<a href="/Spring231/src/webapp/WEB-INF/pages/new">Create new user</a>
+<a href="/Spring231/src/webapp/WEB-INF/pages/new.html?">Create new user</a>
 </body>
 </html>
