@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import web.model.User;
 import web.service.UserService;
 
+import javax.transaction.Transactional;
+
 @Controller
 public class UserController {
     private UserService userService;
@@ -26,6 +28,7 @@ public class UserController {
         return "/get";
     }
 
+
     @GetMapping("/new")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
@@ -44,12 +47,15 @@ public class UserController {
         model.addAttribute("user", userService.getById(id));
         return "/edit";
     }
+
+
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") int id) {
         userService.edit(id, user);
         return "redirect:/users";
 
     }
+
 
 
     @DeleteMapping ("/{id}")

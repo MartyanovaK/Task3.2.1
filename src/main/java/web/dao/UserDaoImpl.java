@@ -3,6 +3,7 @@ import org.springframework.stereotype.Repository;
 import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 
@@ -15,22 +16,26 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> allUsers() {
-       return entityManager.createQuery("from User").getResultList();
+        return entityManager.createQuery("from User ").getResultList();
+
 
     }
 
 
+    @Transactional
     @Override
     public void add(User user) {
         entityManager.persist(user);
     }
 
+    @Transactional
     @Override
     public void delete(int id) {
         User user = entityManager.find(User.class,  id);
         entityManager.remove(user);
     }
 
+    @Transactional
     @Override
     public void edit(int id, User user) {
         user = entityManager.find(User.class, id);
