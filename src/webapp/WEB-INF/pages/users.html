@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>USERS</title>
+    <title>users</title>
 </head>
 <body>
 <table>
@@ -13,14 +13,17 @@
             <th>lastName</th>
             <th>email</th>
         </tr>
-        <td th:text="${user.id}"></td>
-        <td th:text="${user.firstName}"></td>
-        <td th:text="${user.lastName}"></td>
-        <td th:text="${user.email}"></td>
+
+        <tr th:each="user : ${users}">
+            <td><a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getId()}">Id</a></td>
+            <td th:text="${user.getFirstName()}"></td>
+            <td th:text="${user.getLastName()}"></td>
+            <td th:text="${user.getEmail()}"></td>
+        </tr>
+
     </div>
 </table>
 <br/>
-<hr/>
 <a href="/new">Create new user</a>
 </body>
 </html>

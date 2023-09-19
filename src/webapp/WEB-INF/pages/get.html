@@ -5,10 +5,12 @@
     <title>User</title>
 </head>
 <body>
-<p th:text="${user.getFirstName()}"></p>
-<p th:text="${user.getLastName()}"></p>
-<p th:text="${user.getEmail()}"></p>
-<p th:text="${user.getId()}"></p>
+<p th:text="${user.getId()}">VALUE</p>
+<p th:text="${user.getFirstName()}">VALUE</p>
+<p th:text="${user.getLastName()}">VALUE</p>
+<p th:text="${user.getEmail()}">VALUE</p>
+
+
 
 <a th:href="@{/{id}/edit(id=${user.getId()})}">edit</a>
 

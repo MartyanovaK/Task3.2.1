@@ -1,6 +1,6 @@
 package web.model;
 
-import org.hibernate.annotations.Entity;
+
 
 import javax.persistence.*;
 
@@ -10,17 +10,17 @@ public class User {
 
 
     @Id
-    @Column(name = "id")
+    @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "firstName")
+    @Column(name = "FirstName")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "LastName")
     private String lastName;
 
-    @Column(name = "email")
+    @Column(name = "Email")
     private String email;
 
 

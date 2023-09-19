@@ -14,10 +14,10 @@ public class UserDaoImpl implements UserDao {
     private EntityManager entityManager;
 
 
+
     @Override
     public List<User> allUsers() {
-        return entityManager.createQuery("from User ").getResultList();
-
+        return entityManager.createQuery("from User",User.class).getResultList();
 
     }
 
@@ -37,8 +37,7 @@ public class UserDaoImpl implements UserDao {
 
     @Transactional
     @Override
-    public void edit(int id, User user) {
-        user = entityManager.find(User.class, id);
+    public void edit(User user) {
         entityManager.merge(user);
     }
 
