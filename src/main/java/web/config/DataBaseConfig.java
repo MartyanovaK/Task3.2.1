@@ -71,6 +71,4 @@ public class DataBaseConfig {
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         return properties;
     }
-
-
 }
